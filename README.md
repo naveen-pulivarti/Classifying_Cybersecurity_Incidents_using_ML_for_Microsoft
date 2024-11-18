@@ -132,7 +132,7 @@ Based on cross-validation, **Decision Tree** and **Random Forest** consistently 
 
 Both models demonstrated strong performance, with **Decision Tree** marginally better in terms of consistency and accuracy.
 
-![Cross-Validation Results](screenshot_path_here)
+![Cross-Validation Results](screenshots/sc2_cvforfullset.png)
 
 ### Sampling Due to Large Dataset Size
 
@@ -143,7 +143,7 @@ After applying **Cross-validation** for the **Decision Tree** and **Random Fores
 - **Random Forest**: Achieved a mean cross-validation accuracy of **96.40%** with a standard deviation of **0.03%**, indicating consistent performance across folds.
 - **Decision Tree**: Achieved a higher mean cross-validation accuracy of **97.68%** with a standard deviation of **0.01%**, demonstrating both better performance and stability compared to Random Forest.
 
-![Sample Dataset Cross-Validation](screenshot_path_here)
+![Sample Dataset Cross-Validation](screenshots/sc3_cvforsampleset.png)
 
 ### Hyperparameter Tuning Results (Randomized Search CV)
 
@@ -161,11 +161,11 @@ After applying **Cross-validation** for the **Decision Tree** and **Random Fores
 
 Both models showed strong results, with **Random Forest** outperforming **Decision Tree** slightly on the test set.
 
-![Hyperparameter Tuning Results](screenshot_path_here)
+![Hyperparameter Tuning Results](screenshots/sc4_hyptune.png)
 
 ### Important Features
 
-![Important Features](screenshot_path_here)
+![Important Features](screenshots/sc7_featimp.png)
 
 ### Errors / Misclassifications
 
@@ -198,12 +198,11 @@ After training the models on the **1.5 million row sample dataset** (500,000 row
   - Class 1 (84% precision)
   - Class 2 (93% precision)
 
-![Model Evaluation on Test Set](screenshot_path_here)
+![Model Evaluation on Test Set](screenshots/sc7_finaleval.png)
 
 ### Notes
 
 - Models were trained on a **1.5 million row sample dataset** (500,000 rows per class) and evaluated on a **4.1 million test dataset**.
 - If the **9.8 million row training dataset** had been used for hyperparameter tuning and training, the evaluation scores on the **4.1 million test dataset** might have improved. However, due to the size of the dataset, it was impractical to process in a reasonable time, so a sample dataset was used instead.
 
-![Test Set Evaluation](screenshot_path_here)
 
