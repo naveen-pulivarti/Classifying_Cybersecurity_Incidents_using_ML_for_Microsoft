@@ -35,3 +35,77 @@ To evaluate the effectiveness of the machine learning models, we use the followi
 
 - **Primary Metric**: Macro-F1 score for accurate triage grade prediction.
 - **Secondary Metrics**: Precision and recall for assessing the accuracy of proposed remediation actions.
+
+# Approach
+
+This project focuses on preprocessing and exploratory data analysis (EDA) for both training and testing datasets, followed by model training, evaluation, and testing on a large-scale dataset. Below is the step-by-step breakdown:
+
+---
+
+## Step 1: Preprocessing and EDA for Train and Test Datasets
+
+### 1. Preprocessing:
+- Imported necessary libraries and modules.
+- Read the train dataset and conducted an initial inspection.
+- **Data Cleaning**:
+  - Dropped duplicate rows.
+  - Dropped rows with 50% or more null values.
+  - Removed remaining null values.
+- **Feature Engineering**:
+  - Extracted `Day`, `Month`, and `Hour` from the `Timestamp` column.
+
+### 2. Exploratory Data Analysis (EDA):
+- Visualized distributions and patterns using:
+  - Count plot for target column classes.
+  - Bar plots for `IncidentGrade` counts by:
+    - Category
+    - EntityType
+    - Evidence
+    - Day of the month
+    - Month
+    - Hour of the day
+- Generated a **correlation heatmap** for all numerical columns.
+  - Dropped one of two highly correlated columns (≥ 80%) to reduce redundancy and multicollinearity.
+- Applied **Label Encoding** for categorical columns.
+  - Opted for label encoding instead of one-hot encoding due to the high number of categories.
+- Saved the cleaned and processed train dataset.
+
+### 3. Test Dataset:
+- Repeated the above preprocessing and EDA steps for the test dataset.
+
+---
+
+## Step 2: Model Training and Testing
+
+### 1. Data Preparation:
+- Imported necessary libraries and loaded the preprocessed train dataset.
+- Selected the top 15 features using ANOVA feature selection.
+
+### 2. Model Training:
+- Trained four models using stratified sampling on the full dataset with 9.8 million rows:
+  - Logistic Regression
+  - Decision Tree
+  - Random Forest
+  - XGBoost
+- **Observations**:
+  - **Random Forest** and **Decision Tree** showed superior performance.
+  - Due to the dataset's size, stratified sampling was applied to create a balanced subset of 500,000 rows per class for efficient processing.
+
+### 3. Cross-Validation and Hyperparameter Tuning:
+- Applied **cross-validation** for robust evaluation.
+- Used **RandomizedSearchCV** for hyperparameter tuning of Decision Tree and Random Forest models.
+
+### 4. Feature Importance Analysis:
+- Analyzed feature importance using model-specific measures (e.g., feature importance in Random Forest).
+
+### 5. Error Analysis:
+- Identified and analyzed misclassifications for Decision Tree and Random Forest models.
+
+### 6. Final Evaluation:
+- Evaluated models on the **test dataset** using key metrics:
+  - Accuracy
+  - Precision
+  - Recall
+  - F1-Score
+  - Confusion Matrix
+
