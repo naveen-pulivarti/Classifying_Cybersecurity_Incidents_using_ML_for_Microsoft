@@ -206,3 +206,47 @@ After training the models on the **1.5 million row sample dataset** (500,000 row
 - If the **9.8 million row training dataset** had been used for hyperparameter tuning and training, the evaluation scores on the **4.1 million test dataset** might have improved. However, due to the size of the dataset, it was impractical to process in a reasonable time, so a sample dataset was used instead.
 
 
+## Recommendations for Integration into SOC Workflows
+
+To ensure the model can be effectively integrated into Security Operations Center (SOC) workflows, the following recommendations are proposed:
+
+1. **Automated Incident Triage:**
+   - Integrate the model with existing Security Information and Event Management (SIEM) systems to automate the triage of incoming alerts.
+   - Use the model's predictions (TP, BP, FP) to prioritize incidents, enabling SOC analysts to focus on critical threats first.
+
+2. **Continuous Model Training:**
+   - Given the dynamic nature of cybersecurity, periodically retrain the model using updated incident data to maintain prediction accuracy and relevance.
+   - Implement a feedback loop where analysts' actions (e.g., false positive/true positive classifications) are fed back into the model for continuous improvement.
+
+3. **Real-Time Threat Detection:**
+   - Deploy the model in real-time monitoring systems to provide immediate classification and action recommendations as new incidents occur.
+   - Ensure the system is capable of handling high volumes of alerts, especially in large enterprise environments, by optimizing the model's processing speed.
+
+4. **Integration with Incident Response Tools:**
+   - Extend the model's capabilities to suggest remediation actions for different incident types, assisting SOC analysts with automated responses or playbooks.
+   - Build an intuitive user interface that visualizes incident triage results and recommended actions to streamline analyst workflows.
+
+5. **Model Interpretability:**
+   - Implement tools for explaining model predictions (e.g., feature importance visualizations) to enhance analyst trust in the model’s decisions.
+   - Provide decision-support insights for both automated and manual incident responses.
+
+
+## Conclusion
+This project demonstrates the potential of machine learning in automating and enhancing cybersecurity incident detection within Security Operations Centers (SOCs). By leveraging the GUIDE dataset, the machine learning models developed—specifically Decision Tree and Random Forest—can significantly reduce the time and effort needed for incident triage and prioritization, allowing SOC analysts to focus on the most critical threats.
+
+The integration of these models into existing SOC workflows can lead to a more efficient and effective response to security incidents, helping enterprises stay one step ahead of emerging threats. With continuous model training and feedback loops, this system can evolve alongside the ever-changing cybersecurity landscape, providing valuable insights and improving the overall security posture of organizations.
+
+## Future Work
+While the current models show promising results, there are several areas for future improvement:
+
+- **Model Optimization**: Exploring more advanced techniques such as neural networks and ensemble methods could further improve model accuracy and efficiency.
+- **Real-Time Adaptation**: Implementing a real-time adaptation mechanism that allows the model to learn from new data as it becomes available could further increase its effectiveness.
+- **Scalability**: Enhancing the model’s scalability to handle even larger datasets and faster processing times could be crucial for enterprise-level applications.
+
+## Acknowledgements
+We would like to express our gratitude to the contributors of the GUIDE dataset for providing valuable resources, and to the cybersecurity community whose work continues to advance the field.
+
+## References
+- GUIDE dataset: [[Link to dataset](https://drive.google.com/drive/folders/18vt2lkf69MggXitrTSn9qnZ8s-ToeKcH)]
+- Scikit-learn documentation: [[Link to documentation](https://scikit-learn.org/0.21/documentation.html)]
+- XGBoost documentation: [[Link to documentation](https://xgboost.readthedocs.io/en/latest/)]
