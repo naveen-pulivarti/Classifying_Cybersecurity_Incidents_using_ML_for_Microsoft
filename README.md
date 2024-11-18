@@ -1,6 +1,6 @@
 # Cybersecurity Incident Detection with Machine Learning
+![banner](screenshots/cyber_security_automation.jpg)
 ## Enhancing Security Operations with Predictive Analytics
-
 ### Overview
 In today’s fast-evolving cybersecurity landscape, Security Operations Centers (SOCs) are inundated with an overwhelming number of alerts and incidents. This project seeks to address this challenge by leveraging machine learning models to predict and classify cybersecurity incidents, aiding SOC analysts in making more informed decisions and responding to threats faster and more effectively. By using Microsoft’s innovative GUIDE dataset, this work lays the foundation for creating intelligent, automated systems that can help secure enterprise environments from emerging threats.
 
