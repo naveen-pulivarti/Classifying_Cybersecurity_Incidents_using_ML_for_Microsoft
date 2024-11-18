@@ -198,7 +198,7 @@ After training the models on the **1.5 million row sample dataset** (500,000 row
   - Class 1 (84% precision)
   - Class 2 (93% precision)
 
-![Model Evaluation on Test Set](screenshots/sc7_finaleval.png)
+![Model Evaluation on Test Set](screenshots/sc8_finaleval.png)
 
 ### Notes
 
